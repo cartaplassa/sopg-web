@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="48x48" href="./assets/images/favicon-48x48.png">
+  
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/queries.css ">
+  <title>SOPG</title>
+</head>
+<body>
+  <main>
+    <div class="container">
+      <h1>Secure-Obscure Password Generator</h1>
+      <div class="password-field">
+        <span class="password-display">
+          <span class="password-placeholder">P4$5W0rD!</span>
+        </span>
+
+        <div class="copy-wrapper">
+          <span class="copied-text"></span>
+          <button class="copy-btn">
+            <img src="./assets/images/icon-copy.svg" alt="Copy password">
+          </button>
+        </div>
+      </div>
+
+      <form class="password-settings">
+        <div class="char-include-group">
+          <label>
+            <input type="checkbox" class="wordlists" id="adjectives" value="adjectives"/>
+            <span class="custom-checkbox"></span>
+            <p>Include adjectives</p>
+          </label>
+          <label>
+            <input type="checkbox" class="wordlists" id="nouns" value="nouns" checked/>
+            <span class="custom-checkbox"></span>
+            <p>Include nouns</p>
+          </label>
+          <label>
+            <input type="checkbox" class="wordlists" id="verbs" value="verbs" checked/>
+            <span class="custom-checkbox"></span>
+            <p>Include verbs</p>
+          </label>
+          <label>
+            <input type="checkbox" class="wordlists" id="adverbs" value="adverbs"/>
+            <span class="custom-checkbox"></span>
+            <p>Include adverbs</p>
+          </label>
+        </div>
+
+        <div class="strength-entropy-box">
+          <div class="entropy-box">
+            <span class="entropy-label">Entropy: </span>
+            <span class="entropy-text"></span>
+          </div>
+          <div class="strength-box">
+            <span class="strength-label">Strength:</span>
+            <div class="strength-rating">
+              <span class="strength-rating-text"></span>
+              <div class="strength-rating-bars">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="generate-btn" type="submit">
+          <span>Generate</span>
+          <svg 
+            width="12" 
+            height="12" 
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path 
+              fill="#24232C" 
+              d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </main>
+  <footer>
+    <p id="attribution">
+      Made by <a href="https://www.github.com/zarni-ein" target="_blank">Zarni</a>. vRC-1
+    </p>
+  </footer>
+</body>
+<script type="module" src="./js/entropy.js"></script>
+<script type="module" src="./js/wordlists.js"></script>
+<script type="module" src="./js/script.js"></script>
+</html>
