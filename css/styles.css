@@ -5,7 +5,7 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 0.9vh;
 }
 
 body {
@@ -39,7 +39,7 @@ h1 {
   font-size: 2.4rem;
   text-align: center;
   color: hsl(251, 9%, 53%);
-
+  
   margin-bottom: 3.2rem;
 }
 

@@ -21,12 +21,12 @@
     font-size: 2.8rem;
   }
 
-  .strength-box {
+  .strength-box, .entropy-box {
     height: 56px;
   }
 }
 
-@media (max-width: 27em) {
+/* @media (max-width: 27em) {
   .password-settings {
     padding: 2.4rem 1.6rem 3.2rem;
   }
@@ -34,9 +34,13 @@
   .strength-rating-text {
     font-size: 1.6rem;
   }
-}
+} */
 
-@media (max-width: 24em) {
+@media (max-width: 40em) {
+  body, main, .container {
+    width: 100%;
+  }
+
   h1 {
     font-size: 1.6rem;
     margin-bottom: 1.6rem;
@@ -64,12 +68,15 @@
     margin-bottom: 3.2rem;
   }
 
-  .strength-box {
-    margin-bottom: 1.6rem;
+  .strength-box, .entropy-box {
     padding: 0 1.6rem;
   }
 
-  .strength-label {
+  .strength-entropy-box {
+    margin-bottom: 1.6rem;
+  }
+
+  .strength-label, .entropy-label {
     font-size: 1.8rem;
   }
 
