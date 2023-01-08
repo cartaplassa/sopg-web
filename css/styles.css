@@ -156,12 +156,23 @@ p {
 /********************************************/
 /*CHECK BOXES*/
 
-.char-include-group {
+.wordlists-include-group {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 
   margin-bottom: 3.4rem;
+}
+
+.case-group {
+  display: flex;
+  justify-content: space-between;  
+
+  margin-bottom: 3.4rem;
+}
+
+.case-group label {
+  padding-left: 2.4rem;
 }
 
 label {
@@ -170,14 +181,14 @@ label {
   position: relative;
 }
 
-input[type=checkbox] {
+input[type=checkbox], input[type=radio] {
   position: absolute;
   width: 0;
   height: 0;
   opacity: 0;
 }
 
-.custom-checkbox {
+.custom-checkbox, .custom-radio {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -192,27 +203,30 @@ input[type=checkbox] {
   cursor: pointer;
 }
 
-.custom-checkbox::after {
+.custom-checkbox::after, .custom-radio::after {
   display: none;
   content: url('../assets/images/icon-check.svg');
   position: absolute;
   top: 3px;
 }
 
-.custom-checkbox:hover {
+.custom-checkbox:hover, .custom-checkbox:hover {
   border-color: hsl(127, 100%, 82%);
 }
 
-input[type=checkbox]:checked ~ .custom-checkbox {
+input[type=checkbox]:checked ~ .custom-checkbox,  
+input[type=radio]:checked ~ .custom-radio {
   border-color: hsl(127, 100%, 82%);
   background-color: hsl(127, 100%, 82%);
 }
 
-input[type=checkbox]:checked ~ .custom-checkbox::after {
+input[type=checkbox]:checked ~ .custom-checkbox::after,
+input[type=radio]:checked ~ .custom-radio::after {
   display: block;
 }
 
-input[type=checkbox]:focus ~ .custom-checkbox {
+input[type=checkbox]:focus ~ .custom-checkbox,
+input[type=radio]:focus ~ .custom-radio {
   outline: 2px solid Highlight;
   outline: 2px solid -webkit-focus-ring-color;
 }

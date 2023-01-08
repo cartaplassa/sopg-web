@@ -2,23 +2,16 @@ import { passwordEntropy } from './entropy.js';
 import { wordlists } from './wordlists.js';
 
 const passwordDisplay = document.querySelector('.password-display');
-const passwordPlaceholder = document.querySelector('.password-placeholder');
 const passwordCopyButton = document.querySelector('.copy-btn');
 const passwordCopiedNotification = document.querySelector('.copied-text');
 
 const passwordForm = document.querySelector('.password-settings');
+const caseRadios = document.querySelectorAll('input[name=case]')
 const wordlistsBoxes = document.querySelectorAll('input[class=wordlists]');
 
 const entropyText = document.querySelector('.entropy-text');
 const strengthDescription = document.querySelector('.strength-rating-text');
 const strengthRatingBars = document.querySelectorAll('.bar');
-
-const CHARACTER_SETS = {
-  uppercase: ['ABCDEFGHIJKLMNOPQRSTUVWXYZ', 26],
-  lowercase: ['abcdefghijklmnopqrstuvwxyz', 26],
-  numbers: ['1234567890', 10],
-  symbols: ['!@#$%^&*()', 10],
-}
 
 let canCopy = false;
 
@@ -109,7 +102,14 @@ const generatePassword = (e) => {
     wordlistsBoxes.forEach(box => {
       if(box.checked) {
         const randCharIndex = Math.floor(Math.random() * wordlists[box.value].length);
-        passwordList.push(wordlists[box.value][randCharIndex]);
+        const randWord = wordlists[box.value][randCharIndex];
+        if (caseRadios[0].checked) {
+          passwordList.push(randWord)
+        } else if (caseRadios[1].checked) {
+          passwordList.push(randWord.charAt(0).toUpperCase() + randWord.slice(1))
+        } else {
+          passwordList.push(randWord.toUpperCase())
+        }
       }
     });
     
