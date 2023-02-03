@@ -52,19 +52,20 @@ p {
 /*PASSWORD FIELD*/
 /********************************************/
 .password-field {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
   height: 22rem;
   padding: 0 3.2rem;
   margin-bottom: 2.4rem;
   background-color: hsl(248, 10%, 15%);
+  position: relative;
+  display: table;
+  width: 100%;
 }
 
 .password-display {
   font-size: 3.2rem;
   color: hsl(252, 11%, 91%);
+  vertical-align: middle;
+  display: table-cell;
 }
 
 .password-placeholder {
@@ -74,15 +75,18 @@ p {
 }
 
 .copy-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
+  position: absolute;
+  bottom: 1.6rem;
+  right: 1.6rem;
+  display: inline-flex;
+  gap: 1rem;
 }
 
 .copied-text {
   font-size: 1.8rem;
   text-transform: uppercase;
   color: hsl(127, 100%, 82%);
+  padding-top: 0.2rem;
 }
 
 .copy-btn {
@@ -166,7 +170,7 @@ p {
 
 .case-group {
   display: flex;
-  justify-content: space-between;  
+  justify-content: space-around;  
 
   margin-bottom: 3.4rem;
 }
@@ -321,4 +325,8 @@ footer {
   font-size: 11px;
   text-align: center;
   margin-bottom: 1em;
+}
+
+a:link, a:visited {
+  color:hsl(127, 100%, 82%);
 }
