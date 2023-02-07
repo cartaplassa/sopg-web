@@ -30,7 +30,7 @@ body {
 
 main {
   flex-grow: 1;
-  width: 54rem;
+  width: 70rem;
   display: flex;
   align-items: center;
 }
@@ -124,12 +124,27 @@ p {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin-bottom: 3.4rem;
-  align-items: end;
+  /* align-items: end; */
 }
 
-.grid-element {
+.custom-cell {
   display: grid;
 
+}
+
+.checkbox-cell {
+  display: flex;
+  align-items: flex-start;
+}
+
+.char-pool-cell {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+}
+
+.char-pool-cell > p {
+  text-align: center;
 }
 
 [type="text"] {
@@ -139,7 +154,7 @@ p {
   border-color: #14131B;
 }
 
-.custom {
+.custom-field {
   width: 7rem;
 }
 
