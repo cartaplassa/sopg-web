@@ -116,6 +116,33 @@ p {
   background-color: hsl(248, 10%, 15%);
 }
 
+/********************************************/
+/*HEADERS/DIVIDERS/TAILS OPTIONS*/
+/********************************************/
+
+.hdt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 3.4rem;
+  align-items: end;
+}
+
+.grid-element {
+  display: grid;
+
+}
+
+[type="text"] {
+  background-color: #14131B;
+  color: white;
+  font-family: 'JetBrainsMono';
+  border-color: #14131B;
+}
+
+.custom {
+  width: 7rem;
+}
+
 /*************************/
 /*CHROME*/
 
@@ -174,7 +201,7 @@ p {
 
 .case-group {
   display: flex;
-  justify-content: space-around;  
+  justify-content: space-between;  
 
   margin-bottom: 3.4rem;
 }
