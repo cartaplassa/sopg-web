@@ -71,6 +71,7 @@ p {
   color: hsl(252, 11%, 91%);
   vertical-align: middle;
   display: table-cell;
+  word-break: break-all;
 }
 
 .password-placeholder {
