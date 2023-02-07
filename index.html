@@ -35,7 +35,14 @@
             <p>Custom</p>
             <input type="radio" name="header" id="header-custom" value="custom" checked/>
             <span class="custom-radio"></span>
-            <input class="custom-field" type="text" id="header-field" name="header-field" size="2" value="~">
+            <input
+              class="custom-field"
+              type="text"
+              id="header-field"
+              name="header-field"
+              size="2"
+              value="~"
+            />
           </label>
           <label class="grid-element checkbox-cell">
             <input type="radio" name="header" id="header-random" value="random"/>
@@ -44,7 +51,14 @@
           </label>
           <label class="grid-element char-pool-cell">
             <p>Char pool</p>
-            <input class="char-pool" type="text" id="char-pool" name="char-pool" size="6" value="~!@#$%^&*/|\-+=">
+            <input
+              class="char-pool"
+              type="text"
+              id="char-pool"
+              name="char-pool"
+              size="6"
+              value="~!@#$%^&*/|\-+="
+            />
           </label>
           
           <div class="grid-row"><p>Dividers</p></div>
@@ -52,7 +66,14 @@
             <p>Custom</p>
             <input type="radio" name="divider" id="divider-custom" value="custom" checked/>
             <span class="custom-radio"></span>
-            <input class="custom-field" type="text" id="divider-field" name="divider-field" size="2" value="-">
+            <input
+              class="custom-field"
+              type="text"
+              id="divider-field"
+              name="divider-field"
+              size="2"
+              value="-"
+            />
           </label>
           <label class="grid-element checkbox-cell">
             <input type="radio" name="divider" id="divider-random" value="random"/>
@@ -70,7 +91,14 @@
             <p>Custom</p>
             <input type="radio" name="tail" id="tail-custom" value="custom" checked/>
             <span class="custom-radio"></span>
-            <input class="custom-field" type="text" id="tail-field" name="tail-field" size="2" value="#">
+            <input
+              class="custom-field"
+              type="text"
+              id="tail-field"
+              name="tail-field"
+              size="2"
+              value="#"
+            />
           </label>
           <label class="grid-element checkbox-cell">
             <input type="radio" name="tail" id="tail-random" value="random"/>
@@ -82,48 +110,53 @@
             <span class="custom-radio"></span>
             <p>Match</p>
           </label>
-
         </div>
 
-        <div class="case-group">
-          <label>
-            <input type="radio" name="case" id="lowercase" value="lowercase"/>
-            <span class="custom-radio"></span>
-            <p>Lowercase</p>
-          </label>
-          <label>
-            <input type="radio" name="case" id="capitalize" value="capitalize" checked/>
-            <span class="custom-radio"></span>
-            <p>Capitalize</p>
-          </label>
-          <label>
-            <input type="radio" name="case" id="uppercase" value="uppercase"/>
-            <span class="custom-radio"></span>
-            <p>Uppercase</p>
-          </label>
-        </div>
-        
-        <div class="wordlists-include-group">
-          <label>
-            <input type="checkbox" class="wordlists" id="adjectives" value="adjectives"/>
-            <span class="custom-checkbox"></span>
-            <p>Include adjectives</p>
-          </label>
-          <label>
-            <input type="checkbox" class="wordlists" id="nouns" value="nouns" checked/>
-            <span class="custom-checkbox"></span>
-            <p>Include nouns</p>
-          </label>
-          <label>
-            <input type="checkbox" class="wordlists" id="verbs" value="verbs" checked/>
-            <span class="custom-checkbox"></span>
-            <p>Include verbs</p>
-          </label>
-          <label>
-            <input type="checkbox" class="wordlists" id="adverbs" value="adverbs"/>
-            <span class="custom-checkbox"></span>
-            <p>Include adverbs</p>
-          </label>
+        <div class="case-and-inclusion">
+          <div class="case-group">
+            <label>
+              <input type="radio" name="case" id="lowercase" value="lowercase"/>
+              <span class="custom-radio"></span>
+              <p>Lowercase</p>
+            </label>
+            <label>
+              <input type="radio" name="case" id="capitalize" value="capitalize" checked/>
+              <span class="custom-radio"></span>
+              <p>Capitalize</p>
+            </label>
+            <label>
+              <input type="radio" name="case" id="uppercase" value="uppercase"/>
+              <span class="custom-radio"></span>
+              <p>Uppercase</p>
+            </label>
+            <label>
+              <input type="radio" name="case" id="reverse-caps" value="reverse-caps"/>
+              <span class="custom-radio"></span>
+              <p>Reverse Caps</p>
+            </label>
+          </div>
+          <div class="wordlists-include-group">
+            <label>
+              <input type="checkbox" class="wordlists" id="adjectives" value="adjectives"/>
+              <span class="custom-checkbox"></span>
+              <p>Include adjectives</p>
+            </label>
+            <label>
+              <input type="checkbox" class="wordlists" id="nouns" value="nouns" checked/>
+              <span class="custom-checkbox"></span>
+              <p>Include nouns</p>
+            </label>
+            <label>
+              <input type="checkbox" class="wordlists" id="verbs" value="verbs" checked/>
+              <span class="custom-checkbox"></span>
+              <p>Include verbs</p>
+            </label>
+            <label>
+              <input type="checkbox" class="wordlists" id="adverbs" value="adverbs"/>
+              <span class="custom-checkbox"></span>
+              <p>Include adverbs</p>
+            </label>
+          </div>
         </div>
 
         <div class="strength-entropy-box">
@@ -147,23 +180,13 @@
 
         <button class="generate-btn" type="submit">
           <span>Generate</span>
-          <svg 
-            width="12" 
-            height="12" 
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path 
-              fill="#24232C" 
-              d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"/>
-          </svg>
         </button>
       </form>
     </div>
   </main>
   <footer>
     <p id="attribution">
-      Made by <a href="https://www.github.com/zarni-ein" target="_blank">Zarni</a>. v1.1a
+      Made by <a href="https://www.github.com/zarni-ein" target="_blank">Zarni</a>. v1.1b
     </p>
   </footer>
 </body>

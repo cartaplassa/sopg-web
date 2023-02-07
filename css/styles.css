@@ -208,7 +208,11 @@ p {
 /********************************************/
 /*CHECK BOXES*/
 
-.wordlists-include-group {
+.case-and-inclusion {
+  display: flex;
+}
+
+.wordlists-include-group, .case-group {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -217,10 +221,8 @@ p {
 }
 
 .case-group {
-  display: flex;
-  justify-content: space-between;  
-
-  margin-bottom: 3.4rem;
+  flex-basis: 40%;
+  margin-right: 2rem;
 }
 
 label {
