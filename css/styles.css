@@ -30,13 +30,14 @@ body {
 
 main {
   flex-grow: 1;
-  width: 70rem;
+  width: 60rem;
   display: flex;
   align-items: center;
 }
 
 .container {
   margin: 0 auto;
+  width: 100%;
 }
 
 h1 {
@@ -56,7 +57,7 @@ p {
 /*PASSWORD FIELD*/
 /********************************************/
 .password-field {
-  height: 22rem;
+  height: 14rem;
   padding: 0 3.2rem;
   margin-bottom: 2.4rem;
   background-color: hsl(248, 10%, 15%);
@@ -122,8 +123,9 @@ p {
 
 .hdt-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 0.7fr 1fr 1fr 1fr;
   margin-bottom: 3.4rem;
+  gap: 0.5rem;
   /* align-items: end; */
 }
 
@@ -143,8 +145,8 @@ p {
   padding-left: 0;
 }
 
-.char-pool-cell > p {
-  text-align: center;
+.grid-row {
+  margin: auto 0;
 }
 
 [type="text"] {
@@ -221,10 +223,6 @@ p {
   margin-bottom: 3.4rem;
 }
 
-.case-group label {
-  padding-left: 2.4rem;
-}
-
 label {
   display: block;
   padding-left: 4.4rem;
@@ -263,8 +261,12 @@ input[type=checkbox], input[type=radio] {
   transform: scale(var(--trickyScale));
 }
 
-.custom-checkbox:hover, .custom-checkbox:hover {
+.custom-checkbox:hover, .custom-radio:hover {
   border-color: hsl(127, 100%, 82%);
+}
+
+.custom-radio {
+  border-radius: 50%;
 }
 
 input[type=checkbox]:checked ~ .custom-checkbox,  

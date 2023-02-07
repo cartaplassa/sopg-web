@@ -5,6 +5,14 @@ const passwordDisplay = document.querySelector('.password-display');
 const passwordCopyButton = document.querySelector('.copy-btn');
 const passwordCopiedNotification = document.querySelector('.copied-text');
 
+const charPool = document.querySelector('.char-pool')
+const headerOption = document.querySelectorAll('input[name=header]');
+const headerCustom = document.querySelector('input[id=header-field]');
+const dividerOption = document.querySelectorAll('input[name=divider]');
+const dividerCustom = document.querySelector('input[id=divider-field]');
+const tailOption = document.querySelectorAll('input[name=tail]');
+const tailCustom = document.querySelector('input[id=tail-field]');
+
 const passwordForm = document.querySelector('.password-settings');
 const caseRadios = document.querySelectorAll('input[name=case]')
 const wordlistsBoxes = document.querySelectorAll('input[class=wordlists]');
@@ -99,10 +107,33 @@ const generatePassword = (e) => {
     let passwordList = [];
     let passwordResult = '';
 
+    let header, divider, tail = '';
+
+    if (headerOption[0].checked) {
+      header = headerCustom.value
+    } else if (headerOption[1].checked) {
+      header = charPool.value[Math.floor(Math.random() * charPool.value.length)]
+    }
+
+    if (dividerOption[0].checked) {
+      divider = dividerCustom.value
+    } else if (dividerOption[1].checked) {
+      divider = charPool.value[Math.floor(Math.random() * charPool.value.length)]
+    } else if (dividerOption[2].checked) {
+      divider = header
+    }
+
+    if (tailOption[0].checked) {
+      tail = tailCustom.value
+    } else if (tailOption[1].checked) {
+      tail = charPool.value[Math.floor(Math.random() * charPool.value.length)]
+    } else if (tailOption[2].checked) {
+      tail = header
+    }
+
     wordlistsBoxes.forEach(box => {
       if(box.checked) {
-        const randCharIndex = Math.floor(Math.random() * wordlists[box.value].length);
-        const randWord = wordlists[box.value][randCharIndex];
+        const randWord = wordlists[box.value][Math.floor(Math.random() * wordlists[box.value].length)];
         if (caseRadios[0].checked) {
           passwordList.push(randWord)
         } else if (caseRadios[1].checked) {
@@ -113,7 +144,7 @@ const generatePassword = (e) => {
       }
     });
     
-    passwordResult = HEADER + passwordList.join(DIVIDER) + TAIL;
+    passwordResult = header + passwordList.join(divider) + tail;
     const strength = calcStrength(passwordResult);
     styleMeter(strength);
 
