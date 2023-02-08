@@ -27,13 +27,13 @@
         </div>
       </div>
 
-      <form class="password-settings">
+      <form class="password-settings" name="password-settings">
         <div class="hdt-grid">
 
-          <div class="block-label"><p>Header</p></div>
+          <div class="block-label" id="title-header"><p>Header</p></div>
+          <div class="block-label" id="title-char-pool"><p>Char pool</p></div>
           <label class="grid-element custom-cell">
-            <p>Custom</p>
-            <input type="radio" name="header" id="header-custom" value="custom" checked/>
+            <input type="radio" name="header" id="header-custom" value="custom"/>
             <span class="custom-radio"></span>
             <input
               class="custom-field"
@@ -41,30 +41,29 @@
               id="header-field"
               name="header-field"
               size="2"
-              value="~"
+              placeholder="Custom"
             />
           </label>
           <label class="grid-element checkbox-cell">
-            <input type="radio" name="header" id="header-random" value="random"/>
+            <input type="radio" name="header" id="header-random" value="random" checked/>
             <span class="custom-radio"></span>
             <p>Random</p>
           </label>
           <label class="grid-element char-pool-cell">
-            <p>Char pool</p>
             <input
               class="char-pool"
               type="text"
               id="char-pool"
               name="char-pool"
               size="6"
-              value="~!@#$%^&*/|\-+="
+              value="~!@#$%^&*/|\-+=",
+              alt="Char pool"
             />
           </label>
           
-          <div class="block-label"><p>Dividers</p></div>
+          <div class="block-label" id="title-divider"><p>Dividers</p></div>
           <label class="grid-element custom-cell">
-            <p>Custom</p>
-            <input type="radio" name="divider" id="divider-custom" value="custom" checked/>
+            <input type="radio" name="divider" id="divider-custom" value="custom"/>
             <span class="custom-radio"></span>
             <input
               class="custom-field"
@@ -72,11 +71,11 @@
               id="divider-field"
               name="divider-field"
               size="2"
-              value="-"
+              placeholder="Custom"
             />
           </label>
           <label class="grid-element checkbox-cell">
-            <input type="radio" name="divider" id="divider-random" value="random"/>
+            <input type="radio" name="divider" id="divider-random" value="random" checked/>
             <span class="custom-radio"></span>
             <p>Random</p>
           </label>
@@ -86,10 +85,9 @@
             <p>Match</p>
           </label>
           
-          <div class="block-label"><p>Tail</p></div>
+          <div class="block-label" id="title-tail"><p>Tail</p></div>
           <label class="grid-element custom-cell">
-            <p>Custom</p>
-            <input type="radio" name="tail" id="tail-custom" value="custom" checked/>
+            <input type="radio" name="tail" id="tail-custom" value="custom"/>
             <span class="custom-radio"></span>
             <input
               class="custom-field"
@@ -97,11 +95,11 @@
               id="tail-field"
               name="tail-field"
               size="2"
-              value="#"
+              placeholder="Custom"
             />
           </label>
           <label class="grid-element checkbox-cell">
-            <input type="radio" name="tail" id="tail-random" value="random"/>
+            <input type="radio" name="tail" id="tail-random" value="random" checked/>
             <span class="custom-radio"></span>
             <p>Random</p>
           </label>
@@ -188,7 +186,7 @@
   </main>
   <footer>
     <p id="attribution">
-      Made by <a href="https://www.github.com/zarni-ein" target="_blank">Zarni</a>. v1.1d
+      Made by <a href="https://www.github.com/zarni-ein" target="_blank">Zarni</a>. v1.1e
     </p>
   </footer>
 </body>

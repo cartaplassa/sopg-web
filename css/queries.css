@@ -19,15 +19,25 @@
 
   .hdt-grid {
     grid-template-columns: repeat(3, 1fr);
+    row-gap: 0.5rem;
   }
 
-  .block-label {
+  #title-header {
+    grid-column: span 2;
+    display: inline;
+  }
+
+  #title-char-pool {
+    display: inline;
+  }
+
+  #title-divider, #title-tail {
     grid-column: span 3;
   }
   
   .block-label p {
-    text-decoration: underline;
     text-align: center;
+    margin-top: 1rem;
   }
 
   .char-count {
