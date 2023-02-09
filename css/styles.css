@@ -287,6 +287,14 @@ input[type=radio]:focus ~ .custom-radio {
 }
 
 /********************************************/
+/*LEETRULES*/
+
+.leetrule {
+  display: flex;
+  
+}
+
+/********************************************/
 /*PASSWORD STRENGTH*/
 
 .strength-entropy-box {
