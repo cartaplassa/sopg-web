@@ -111,7 +111,7 @@ const generatePassword = (e) => {
 
     if (headerOption[0].checked) {
       header = headerCustom.value
-    } else if (headerOption[1].checked) {
+    } else {
       header = charPool.value[Math.floor(Math.random() * charPool.value.length)]
     }
 
@@ -119,7 +119,7 @@ const generatePassword = (e) => {
       divider = dividerCustom.value
     } else if (dividerOption[1].checked) {
       divider = charPool.value[Math.floor(Math.random() * charPool.value.length)]
-    } else if (dividerOption[2].checked) {
+    } else {
       divider = header
     }
 
@@ -127,7 +127,7 @@ const generatePassword = (e) => {
       tail = tailCustom.value
     } else if (tailOption[1].checked) {
       tail = charPool.value[Math.floor(Math.random() * charPool.value.length)]
-    } else if (tailOption[2].checked) {
+    } else {
       tail = header
     }
 
@@ -138,8 +138,10 @@ const generatePassword = (e) => {
           passwordList.push(randWord)
         } else if (caseRadios[1].checked) {
           passwordList.push(randWord.charAt(0).toUpperCase() + randWord.slice(1))
-        } else {
+        } else if (caseRadios[2].checked) {
           passwordList.push(randWord.toUpperCase())
+        } else {
+          passwordList.push(randWord.charAt(0) + randWord.slice(1).toUpperCase())
         }
       }
     });
