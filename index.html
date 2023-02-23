@@ -11,7 +11,6 @@
   <title>SOPG</title>
 </head>
 <body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <main>
     <div class="container">
       <h1>Secure-Obscure Password Generator</h1>
@@ -170,7 +169,7 @@
             <!-- dropdown-menu -->
           </div>
           <div id="leetrules"></div>
-          <button class="leetrule-add" type="button" onclick="addRule()">+</button>
+          <button id="leetrule-add" type="button">+</button>
         </div>
 
         <div class="strength-entropy-box">
@@ -200,12 +199,13 @@
   </main>
   <footer>
     <p id="attribution">
-      Made by <a href="https://www.github.com/zarni-ein" target="_blank">Zarni</a>. v1.2a
+      Made by <a href="https://www.github.com/zarni-ein" target="_blank">Zarni</a>. v1.2b
     </p>
   </footer>
 
-  <script type="module" src="./js/behavior.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script type="module" src="./js/leetrules.js"></script>
+  <script type="module" src="./js/behavior.js"></script>
   <script type="module" src="./js/entropy.js"></script>
   <script type="module" src="./js/wordlists.js"></script>
   <script type="module" src="./js/script.js"></script>

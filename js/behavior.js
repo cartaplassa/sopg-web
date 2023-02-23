@@ -9,14 +9,14 @@ function trickyScale() {
 };
 
 function onStart() {
+    trickyScale();
+    document.getElementsByName("password-settings")[0].reset();
     addRule('O,o', '0');
     addRule('I,i', '1');
     addRule('A,a', '4');
     addRule('B,b', '8');
     addRule('S,s', '$');
     addRule('L,l', '!');
-    trickyScale();
-    document.getElementsByName("password-settings")[0].reset();
 }
 
 window.onstart = onStart();

@@ -16,7 +16,6 @@ export function addRule(ruleFrom = '', ruleTo = '') {
     fieldFrom.type = "text";
     fieldFrom.className = "leetrule-from";
     fieldFrom.size = "7";
-    console.log(ruleFrom);
     fieldFrom.value = ruleFrom;
     // <span class="leetrule-arrow">=></span>
     let arrow = document.createElement('span');
@@ -27,7 +26,6 @@ export function addRule(ruleFrom = '', ruleTo = '') {
     fieldTo.type = "text";
     fieldTo.className = "leetrule-to";
     fieldTo.size = 2;
-    console.log(ruleTo);
     fieldTo.value = ruleTo;
     // <button class="leetrule-close">X</button>
     let closeButton = document.createElement('button');
@@ -50,6 +48,8 @@ $(function() {
         $this.remove();
     });
 });
+
+document.getElementById("leetrule-add").addEventListener("click", function() {addRule()});
 
 export function leetify(str, obj) {
     let newStr = str;

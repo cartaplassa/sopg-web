@@ -304,7 +304,7 @@ input[type=radio]:focus ~ .custom-radio {
   background-color: hsl(248, 15%, 11%);
 }
 
-.leetrules {
+#leetrules {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
@@ -385,7 +385,7 @@ input[type=radio]:focus ~ .custom-radio {
 /********************************************/
 /*GENERATE BUTTON*/
 
-.generate-btn, .leetrule-add {
+.generate-btn, #leetrule-add {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -403,12 +403,12 @@ input[type=radio]:focus ~ .custom-radio {
   cursor: pointer;
 }
 
-.generate-btn:hover, .leetrule-add:hover {
+.generate-btn:hover, #leetrule-add:hover {
   color: hsl(127, 100%, 82%);
   background-color: hsl(247, 11%, 15%);
 }
 
-.generate-btn:hover path, .leetrule-add:hover path {
+.generate-btn:hover path, #leetrule-add:hover path {
   fill: #a3ffae;
 }
 
