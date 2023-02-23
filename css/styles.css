@@ -166,7 +166,7 @@ p {
 }
 
 .custom-field {
-  width: 7rem;
+  width: 8rem;
 }
 
 /*************************/
@@ -300,19 +300,43 @@ input[type=radio]:focus ~ .custom-radio {
 /********************************************/
 /*LEETRULES*/
 
-.leetrule {
+.leetify {
+  background-color: hsl(248, 15%, 11%);
+}
+
+.leetrules {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.leetify-settings {
   display: flex;
-  
+  padding: 2.4rem 3.2rem;
+}
+
+.leetrule-arrow {
+  font-size: 2rem;
+  color: white;
+  font-family: 'JetBrainsMono';
+}
+
+.leetrule-close {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0;
+  background-color: #a3ffae;
+  border-color: #a3ffae;
 }
 
 /********************************************/
 /*PASSWORD STRENGTH*/
 
 .strength-entropy-box {
-  margin-bottom: 3.2rem;
+  margin: 3.2rem 0 0 0;
   display: flex;
-  padding: 0 3.2rem;
+  padding: 2.4rem 3.2rem;
   background-color: hsl(248, 15%, 11%);
+  /* height: 7.2rem; */
 }
 
 .entropy-box {
@@ -333,10 +357,6 @@ input[type=radio]:focus ~ .custom-radio {
   font-size: 1.8rem;
   text-transform: uppercase;
   color: hsl(251, 9%, 53%);
-
-  /* padding: 0 3.2rem; */
-  height: 7.2rem;
-  /* background-color: hsl(248, 15%, 11%); */
 }
 
 .strength-rating {
@@ -365,7 +385,7 @@ input[type=radio]:focus ~ .custom-radio {
 /********************************************/
 /*GENERATE BUTTON*/
 
-.generate-btn {
+.generate-btn, .leetrule-add {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -383,12 +403,12 @@ input[type=radio]:focus ~ .custom-radio {
   cursor: pointer;
 }
 
-.generate-btn:hover {
+.generate-btn:hover, .leetrule-add:hover {
   color: hsl(127, 100%, 82%);
   background-color: hsl(247, 11%, 15%);
 }
 
-.generate-btn:hover path {
+.generate-btn:hover path, .leetrule-add:hover path {
   fill: #a3ffae;
 }
 

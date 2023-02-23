@@ -11,6 +11,7 @@
   <title>SOPG</title>
 </head>
 <body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <main>
     <div class="container">
       <h1>Secure-Obscure Password Generator</h1>
@@ -159,27 +160,17 @@
           </div>
         </div>
 
-        <div class="leetrule">
-          <input type="checkbox" class="leetrule-checkbox" id="leetrule-checkbox-1" value="True" checked/>
-          <span class="custom-checkbox"></span>
-          <input
-            type="text"
-            class="leetrule-from"
-            id="leetrule-from-1"
-            name="leetrule-from-1"
-            size="6"
-            value="A,a"
-          />
-          <span>=></span>
-          <input
-            type="text"
-            class="leetrule-to"
-            id="leetrule-to-1"
-            name="leetrule-to-1"
-            size="2"
-            value="4"
-          />
-          <button class="leetrule-close">X</button>
+        <div class="leetify">
+          <div class="leetify-settings">
+            <label>
+              <input type="checkbox" name="leetify-usage" checked/>
+              <span class="custom-checkbox"></span>
+              <p>Leetify</p>
+            </label>
+            <!-- dropdown-menu -->
+          </div>
+          <div id="leetrules"></div>
+          <button class="leetrule-add" type="button" onclick="addRule()">+</button>
         </div>
 
         <div class="strength-entropy-box">
@@ -209,12 +200,14 @@
   </main>
   <footer>
     <p id="attribution">
-      Made by <a href="https://www.github.com/zarni-ein" target="_blank">Zarni</a>. v1.1e
+      Made by <a href="https://www.github.com/zarni-ein" target="_blank">Zarni</a>. v1.2a
     </p>
   </footer>
+
+  <script type="module" src="./js/behavior.js"></script>
+  <script type="module" src="./js/leetrules.js"></script>
+  <script type="module" src="./js/entropy.js"></script>
+  <script type="module" src="./js/wordlists.js"></script>
+  <script type="module" src="./js/script.js"></script>
 </body>
-<script type="module" src="./js/scale.js"></script>
-<script type="module" src="./js/entropy.js"></script>
-<script type="module" src="./js/wordlists.js"></script>
-<script type="module" src="./js/script.js"></script>
 </html>

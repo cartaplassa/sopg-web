@@ -5,7 +5,7 @@ const passwordDisplay = document.querySelector('.password-display');
 const passwordCopyButton = document.querySelector('.copy-btn');
 const passwordCopiedNotification = document.querySelector('.copied-text');
 
-const charPool = document.querySelector('.char-pool')
+const charPool = document.querySelector('.char-pool');
 const headerOption = document.querySelectorAll('input[name=header]');
 const headerCustom = document.querySelector('input[id=header-field]');
 const dividerOption = document.querySelectorAll('input[name=divider]');
@@ -14,7 +14,8 @@ const tailOption = document.querySelectorAll('input[name=tail]');
 const tailCustom = document.querySelector('input[id=tail-field]');
 
 const passwordForm = document.querySelector('.password-settings');
-const caseRadios = document.querySelectorAll('input[name=case]')
+const passwordGenerate = document.querySelector('.generate-btn');
+const caseRadios = document.querySelectorAll('input[name=case]');
 const wordlistsBoxes = document.querySelectorAll('input[class=wordlists]');
 
 const entropyText = document.querySelector('.entropy-text');
