@@ -21,3 +21,16 @@ function onStart() {
 
 window.onstart = onStart();
 window.onresize = trickyScale;
+
+const leetifyCollapse = document.getElementById('leetify-collapse');
+const leetrules = document.getElementById('leetrules');
+const leetruleAdd = document.getElementById('leetrule-add');
+leetifyCollapse.addEventListener('click', function() {
+    if (leetrules.style.display === '' & leetruleAdd.style.display === '') {
+        leetrules.style.display = 'none';
+        leetruleAdd.style.display = 'none';
+    } else if (leetrules.style.display === 'none' & leetruleAdd.style.display === 'none') {
+        leetrules.style.display = '';
+        leetruleAdd.style.display = '';
+    };
+});

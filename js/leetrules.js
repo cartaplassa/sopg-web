@@ -15,7 +15,7 @@ export function addRule(ruleFrom = '', ruleTo = '') {
     let fieldFrom = document.createElement('input');
     fieldFrom.type = "text";
     fieldFrom.className = "leetrule-from";
-    fieldFrom.size = "7";
+    fieldFrom.size = 2;
     fieldFrom.value = ruleFrom;
     // <span class="leetrule-arrow">=></span>
     let arrow = document.createElement('span');

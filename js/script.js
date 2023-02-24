@@ -40,7 +40,6 @@ function leetify(str, obj) {
   return newStr   
 }
 
-
 //------------------------------------------------------//
 //--------------------STRENGTH METER--------------------//
 //------------------------------------------------------//
@@ -112,10 +111,6 @@ const calcStrength = (password) => {
     return ['Strong', 4];
   }
 }
-
-const HEADER = '~'
-const DIVIDER = '-'
-const TAIL = '#'
 
 const generatePassword = (e) => {
   e.preventDefault();

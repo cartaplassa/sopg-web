@@ -309,9 +309,34 @@ input[type=radio]:focus ~ .custom-radio {
   grid-template-columns: repeat(2, 1fr);
 }
 
+.leetrule {
+  padding-left: 1.2rem;
+}
+
+.leetrule > label > * {
+  margin-left: 1.2rem;
+}
+
+.leetrule > label {
+  display: flex;
+  padding-left: 2.4rem;
+  justify-content: space-between;
+}
+
+.leetrule-from {
+  flex-grow: 7;
+  background-color: hsl(248, 10%, 15%);
+}
+
+.leetrule-to {
+  flex-grow: 2;
+  background-color: hsl(248, 10%, 15%);
+}
+
 .leetify-settings {
   display: flex;
-  padding: 2.4rem 3.2rem;
+  padding: 2.4rem;
+  justify-content: space-between;
 }
 
 .leetrule-arrow {
@@ -320,7 +345,7 @@ input[type=radio]:focus ~ .custom-radio {
   font-family: 'JetBrainsMono';
 }
 
-.leetrule-close {
+.leetrule-close, #leetify-collapse {
   width: 4rem;
   height: 4rem;
   border-radius: 0;
