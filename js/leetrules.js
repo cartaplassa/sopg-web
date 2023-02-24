@@ -50,14 +50,3 @@ $(function() {
 });
 
 document.getElementById("leetrule-add").addEventListener("click", function() {addRule()});
-
-export function leetify(str, obj) {
-    let newStr = str;
-    for (var key in obj) {
-        if (!obj.hasOwnProperty(key)) {
-            continue;
-        }
-        newStr = newStr.replaceAll(key, obj[key]);
-    } 
-    return newStr   
-}

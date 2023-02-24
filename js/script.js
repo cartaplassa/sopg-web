@@ -12,6 +12,7 @@ const dividerOption = document.querySelectorAll('input[name=divider]');
 const dividerCustom = document.querySelector('input[id=divider-field]');
 const tailOption = document.querySelectorAll('input[name=tail]');
 const tailCustom = document.querySelector('input[id=tail-field]');
+const leetifyUsage = document.querySelector('input[name=leetify-usage]');
 
 const passwordForm = document.querySelector('.password-settings');
 const passwordGenerate = document.querySelector('.generate-btn');
@@ -23,6 +24,22 @@ const strengthDescription = document.querySelector('.strength-rating-text');
 const strengthRatingBars = document.querySelectorAll('.bar');
 
 let canCopy = false;
+
+//------------------------------------------------------//
+//----------------------LEETIFIER-----------------------//
+//------------------------------------------------------//
+
+function leetify(str, obj) {
+  let newStr = str;
+  for (var key in obj) {
+      if (!obj.hasOwnProperty(key)) {
+          continue;
+      }
+      newStr = newStr.replaceAll(key, obj[key]);
+  } 
+  return newStr   
+}
+
 
 //------------------------------------------------------//
 //--------------------STRENGTH METER--------------------//
@@ -108,6 +125,7 @@ const generatePassword = (e) => {
     let passwordList = [];
     let passwordResult = '';
 
+    // Getting HDT config
     let header, divider, tail = '';
 
     if (headerOption[0].checked) {
@@ -115,7 +133,6 @@ const generatePassword = (e) => {
     } else {
       header = charPool.value[Math.floor(Math.random() * charPool.value.length)]
     }
-
     if (dividerOption[0].checked) {
       divider = dividerCustom.value
     } else if (dividerOption[1].checked) {
@@ -123,7 +140,6 @@ const generatePassword = (e) => {
     } else {
       divider = header
     }
-
     if (tailOption[0].checked) {
       tail = tailCustom.value
     } else if (tailOption[1].checked) {
@@ -132,22 +148,43 @@ const generatePassword = (e) => {
       tail = header
     }
 
+    // Populating leetrules object from checked field-forms
+    let leetrulesObject = {};
+    const leetrules = document.getElementsByClassName('leetrule');
+    Object.values(leetrules).forEach((rule, index) => {
+        if (rule.children[0].children[0].checked) {
+            rule.children[0].children[2].value.replaceAll(' ','').split(',').forEach(item => {
+                leetrulesObject[item] = rule.children[0].children[4].value;
+            });
+        }
+    });
+
+    // Generating each word
     wordlistsBoxes.forEach(box => {
       if(box.checked) {
-        const randWord = wordlists[box.value][Math.floor(Math.random() * wordlists[box.value].length)];
-        if (caseRadios[0].checked) {
-          passwordList.push(randWord)
-        } else if (caseRadios[1].checked) {
-          passwordList.push(randWord.charAt(0).toUpperCase() + randWord.slice(1))
+        // Picking random word
+        let randWord = wordlists[box.value][Math.floor(Math.random() * wordlists[box.value].length)];
+        // Modifying case
+        if (caseRadios[1].checked) {
+          randWord = randWord.charAt(0).toUpperCase() + randWord.slice(1);
         } else if (caseRadios[2].checked) {
-          passwordList.push(randWord.toUpperCase())
-        } else {
-          passwordList.push(randWord.charAt(0) + randWord.slice(1).toUpperCase())
+          randWord = randWord.toUpperCase();
+        } else if (caseRadios[3].checked) {
+          randWord = randWord.charAt(0) + randWord.slice(1).toUpperCase();
         }
+        // Leetify function (applied after case modifier - UX-driven choice)
+        if (leetifyUsage.checked) {
+          randWord = leetify(randWord, leetrulesObject) 
+        };
+        // Pushing word to list
+        passwordList.push(randWord);
       }
     });
     
+    // Making password string
     passwordResult = header + passwordList.join(divider) + tail;
+
+    // Calculating strength
     const strength = calcStrength(passwordResult);
     styleMeter(strength);
 
