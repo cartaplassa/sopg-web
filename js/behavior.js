@@ -1,5 +1,9 @@
 import { addRule } from './leetrules.js';
 
+const leetifyCollapse = document.getElementById('leetify-collapse');
+const leetrules = document.getElementById('leetrules');
+const leetruleAdd = document.getElementById('leetrule-add');
+
 function trickyScale() {
     // let rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
     let container = document.getElementsByClassName("custom-checkbox")[0];
@@ -17,14 +21,13 @@ function onStart() {
     addRule('B,b', '8');
     addRule('S,s', '$');
     addRule('L,l', '!');
+    leetrules.style.display = 'none';
+    leetruleAdd.style.display = 'none';
 }
 
 window.onstart = onStart();
 window.onresize = trickyScale;
 
-const leetifyCollapse = document.getElementById('leetify-collapse');
-const leetrules = document.getElementById('leetrules');
-const leetruleAdd = document.getElementById('leetrule-add');
 leetifyCollapse.addEventListener('click', function() {
     if (leetrules.style.display === '' & leetruleAdd.style.display === '') {
         leetrules.style.display = 'none';
