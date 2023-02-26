@@ -14,8 +14,8 @@ html {
 
 body {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
   flex-direction: column;  
 
   font-family: 'JetBrainsMono';
@@ -33,6 +33,7 @@ main {
   width: 64rem;
   display: flex;
   align-items: center;
+  margin: 0 auto;
 }
 
 .container {
@@ -45,7 +46,7 @@ h1 {
   text-align: center;
   color: hsl(251, 9%, 53%);
   
-  margin-bottom: 3.2rem;
+  margin: 3.2rem 0;
 }
 
 p {
@@ -307,6 +308,8 @@ input[type=radio]:focus ~ .custom-radio {
 #leetrules {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  padding-right: 2.4rem;
+  margin-bottom: 2.4rem;
 }
 
 .leetrule {
@@ -346,8 +349,8 @@ input[type=radio]:focus ~ .custom-radio {
 }
 
 .leetrule-close, #leetify-collapse {
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 0;
   background-color: #a3ffae;
   border-color: #a3ffae;
@@ -447,7 +450,7 @@ footer {
 #attribution {
   font-size: 11px;
   text-align: center;
-  margin-bottom: 1em;
+  margin: 1em auto;
 }
 
 a:link, a:visited {

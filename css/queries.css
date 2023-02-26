@@ -61,6 +61,10 @@
   .entropy-text, .strength-rating-text {
     font-size: 2.4rem;
   }
+
+  #leetrules {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* @media (max-width: 27em) {
