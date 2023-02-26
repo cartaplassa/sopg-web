@@ -46,10 +46,12 @@
 
   .strength-entropy-box {
     flex-direction: column;
+    padding: 0 2.4rem;
+    margin: 0;
   }
 
   .strength-box, .entropy-box {
-    height: 56px;
+    height: 5rem;
 
     justify-content: space-between;
   }
@@ -62,8 +64,13 @@
     font-size: 2.4rem;
   }
 
+  .leetify-settings {
+    padding: 2.4rem 2.4rem 1rem 2.4rem;
+  }
+
   #leetrules {
     grid-template-columns: 1fr;
+    margin-bottom: 1rem;
   }
 }
 
@@ -109,15 +116,11 @@
     margin-bottom: 3.2rem;
   }
 
-  .strength-entropy-box {
-    margin-bottom: 1.6rem;
-  }
-
   .strength-label, .entropy-label {
     font-size: 1.8rem;
   }
 
-  .generate-btn {
+  .generate-btn, #leetrule-add {
     padding: 1.5rem 0;
     font-size: 1.6rem;
   }
