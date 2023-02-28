@@ -1,3 +1,45 @@
+@media (max-width: 40em) {
+  body, main, .container {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .password-settings {
+    padding: 1.6rem
+  }
+
+  .char-length {
+    margin-bottom: 1.6rem;
+  }
+
+  .char-length-slider {
+    height: 8px;
+    margin-bottom: 4.2rem;
+  }
+
+  .char-count {
+    font-size: 2.4rem;
+  }
+
+  .char-include-group {
+    gap: 1.6rem;
+    margin-bottom: 3.2rem;
+  }
+
+  .strength-label, .entropy-label {
+    font-size: 1.8rem;
+  }
+
+  .button-big {
+    /* padding: 1.5rem 0; */
+    font-size: 1.6rem;
+  }
+}
+
 @media (max-width: 36em) {
   .container {
     width: 91.6%;
@@ -52,8 +94,12 @@
 
   .strength-box, .entropy-box {
     height: 5rem;
-
     justify-content: space-between;
+  }
+
+  .button-big, .leetify-settings {
+    padding: 0 1.2rem 0 1.6rem;
+    height: 5rem;
   }
 
   .entropy-box {
@@ -64,13 +110,10 @@
     font-size: 2.4rem;
   }
 
-  .leetify-settings {
-    padding: 2.4rem 2.4rem 1rem 2.4rem;
-  }
-
   #leetrules {
     grid-template-columns: 1fr;
     margin-bottom: 1rem;
+    padding-right: 1.2rem;
   }
 }
 
@@ -84,44 +127,3 @@
   }
 } */
 
-@media (max-width: 40em) {
-  body, main, .container {
-    width: 100%;
-  }
-
-  h1 {
-    font-size: 1.6rem;
-    margin-bottom: 1.6rem;
-  }
-
-  .password-settings {
-    padding: 1.6rem
-  }
-
-  .char-length {
-    margin-bottom: 1.6rem;
-  }
-
-  .char-length-slider {
-    height: 8px;
-    margin-bottom: 4.2rem;
-  }
-
-  .char-count {
-    font-size: 2.4rem;
-  }
-
-  .char-include-group {
-    gap: 1.6rem;
-    margin-bottom: 3.2rem;
-  }
-
-  .strength-label, .entropy-label {
-    font-size: 1.8rem;
-  }
-
-  .generate-btn, #leetrule-add {
-    padding: 1.5rem 0;
-    font-size: 1.6rem;
-  }
-}

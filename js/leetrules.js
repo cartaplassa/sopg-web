@@ -29,9 +29,11 @@ export function addRule(ruleFrom = '', ruleTo = '') {
     fieldTo.value = ruleTo;
     // <button class="leetrule-close">X</button>
     let closeButton = document.createElement('button');
-    closeButton.className = "leetrule-close";
+    closeButton.className = "button button-small leetrule-close";
     closeButton.type = "button";
-    closeButton.innerHTML = "X";
+    let closeButtonSpan = document.createElement('span')
+    closeButtonSpan.innerHTML = "×";
+    closeButton.appendChild(closeButtonSpan);
     label.appendChild(checkbox);
     label.appendChild(checkboxContainer);
     label.appendChild(fieldFrom);

@@ -15,7 +15,7 @@ const tailCustom = document.querySelector('input[id=tail-field]');
 const leetifyUsage = document.querySelector('input[name=leetify-usage]');
 
 const passwordForm = document.querySelector('.password-settings');
-const passwordGenerate = document.querySelector('.generate-btn');
+const passwordGenerate = document.querySelector('#generate-btn');
 const caseRadios = document.querySelectorAll('input[name=case]');
 const wordlistsBoxes = document.querySelectorAll('input[class=wordlists]');
 

@@ -18,9 +18,12 @@ body {
   /* justify-content: center; */
   flex-direction: column;  
 
-  font-family: 'JetBrainsMono';
   height: 100vh;
   background: linear-gradient(180deg, #14131B 0%, #08070B 100%);
+}
+
+body, input, button {
+  font-family: 'JetBrainsMono';
 }
 
 @font-face {
@@ -155,7 +158,7 @@ p {
   margin: auto 0;
 }
 
-.block-label p {
+.hdt-grid > .block-label p {
   text-decoration: underline;
 }
 
@@ -308,12 +311,12 @@ input[type=radio]:focus ~ .custom-radio {
 #leetrules {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding-right: 2.4rem;
-  margin-bottom: 2.4rem;
+  padding-right: 1.6rem;
+  margin-bottom: 1.6rem;
 }
 
 .leetrule {
-  padding-left: 1.2rem;
+  padding-left: 0.4rem;
 }
 
 .leetrule > label > * {
@@ -338,22 +341,15 @@ input[type=radio]:focus ~ .custom-radio {
 
 .leetify-settings {
   display: flex;
-  padding: 2.4rem;
+  padding: 1.6rem;
   justify-content: space-between;
+  align-items: center;
 }
 
 .leetrule-arrow {
   font-size: 2rem;
   color: white;
   font-family: 'JetBrainsMono';
-}
-
-.leetrule-close, #leetify-collapse {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 0;
-  background-color: #a3ffae;
-  border-color: #a3ffae;
 }
 
 /********************************************/
@@ -411,32 +407,39 @@ input[type=radio]:focus ~ .custom-radio {
 }
 
 /********************************************/
-/*GENERATE BUTTON*/
+/*BUTTONS*/
 
-.generate-btn, #leetrule-add {
+.button-small {
+  width: 3rem;
+  height: 3rem;
+}
+
+.button-big {
+  width: 100%;
+  padding: 1.9rem 0;
+}
+
+.button {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2.2rem;
 
   font-family: inherit;
   font-size: 1.8rem;
   text-transform: uppercase;
   color: hsl(247, 11%, 15%);
 
-  width: 100%;
-  padding: 1.9rem 0;
   border: 2px solid hsl(127, 100%, 82%);
   background-color: hsl(127, 100%, 82%);
   cursor: pointer;
 }
 
-.generate-btn:hover, #leetrule-add:hover {
+.button:hover {
   color: hsl(127, 100%, 82%);
   background-color: hsl(247, 11%, 15%);
 }
 
-.generate-btn:hover path, #leetrule-add:hover path {
+.button:hover path {
   fill: #a3ffae;
 }
 
