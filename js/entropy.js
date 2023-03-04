@@ -30,7 +30,6 @@
  * Based on:
  * http://resources.infosecinstitute.com/password-security-complexity-vs-length/
  */
-
 const calcEntropy = (charset, length) =>
   Math.round(length * Math.log(charset) / Math.LN2)
 
@@ -41,7 +40,6 @@ const calcEntropy = (charset, length) =>
  * the English alphabet. Numbers are 10 characters long. Symbols are the rest
  * of the 33 remaining chars in the 7-bit ASCII table.
  */
-
 const stdCharsets = [{
   name: 'lowercase',
   re: /[a-z]/, // abcdefghijklmnopqrstuvwxyz
@@ -64,7 +62,6 @@ const stdCharsets = [{
  * Creates a function to calculate the total charset length of a string based on
  * the given charsets.
  */
-
 const calcCharsetLengthWith = charsets =>
   string =>
     charsets.reduce((length, charset) =>
@@ -74,12 +71,10 @@ const calcCharsetLengthWith = charsets =>
  * Helper function to calculate the total charset lengths of a given string
  * using the standard character sets.
  */
-
 const calcCharsetLength = calcCharsetLengthWith(stdCharsets)
 
 /**
  * Calculate the given password entropy.
  */
-
 export const passwordEntropy = string =>
   string ? calcEntropy(calcCharsetLength(string), string.length) : 0

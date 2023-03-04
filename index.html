@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" sizes="48x48" href="./assets/images/favicon-48x48.png">
   
   <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="./css/queries.css ">
+  <link rel="stylesheet" href="./css/queries.css">
   <title>SOPG</title>
 </head>
 <body>
@@ -56,7 +56,7 @@
               id="char-pool"
               name="char-pool"
               size="6"
-              value="~!@#$%^&*/|\-+=",
+              value="~!@#$%^&*/|\-+="
               alt="Char pool"
             />
           </label>
@@ -171,10 +171,12 @@
               <span>▼</span>
             </button>
           </div>
-          <div id="leetrules"></div>
-          <button class="button button-big" id="leetrule-add" type="button">
-            <span>+</span>
-          </button>
+          <div class="leetify-leetrules" id="leetrules-container">
+            <div id="leetrules"></div>
+            <button class="button button-big" id="leetrule-add" type="button">
+              <span>+</span>
+            </button>
+          </div>
         </div>
 
         <div class="strength-entropy-box">
@@ -208,11 +210,6 @@
     </p>
   </footer>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script type="module" src="./js/leetrules.js"></script>
-  <script type="module" src="./js/behavior.js"></script>
-  <script type="module" src="./js/entropy.js"></script>
-  <script type="module" src="./js/wordlists.js"></script>
-  <script type="module" src="./js/script.js"></script>
+  <script type="module" src="./js/onload.js"></script>
 </body>
 </html>

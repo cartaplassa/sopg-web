@@ -1,4 +1,4 @@
-export const wordlists = {
+export const wordlist = {
     adjectives: [
         "A-OK",
         "AWOL",

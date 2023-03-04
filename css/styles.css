@@ -1,5 +1,5 @@
 :root {
-  --trickyScale: 1;
+  /*--trickyScale: 1;*/
 }
 
 * {
@@ -262,18 +262,15 @@ input[type=checkbox], input[type=radio] {
 
   height: 2rem;
   width: 2rem;
-  border: 2px solid hsl(252, 11%, 91%);
+  border: 0.2rem solid hsl(252, 11%, 91%);
   cursor: pointer;
 }
 
 .custom-checkbox::after, .custom-radio::after {
   display: none;
   content: url('../assets/images/icon-check.svg');
-  /* position: relative;
-  top: -50%; */
-  height: 0;
-  width: 0;
-  transform: scale(var(--trickyScale));
+  height: 100%;
+  width: 100%;
 }
 
 .custom-checkbox:hover, .custom-radio:hover {
@@ -298,7 +295,6 @@ input[type=radio]:checked ~ .custom-radio::after {
 input[type=checkbox]:focus ~ .custom-checkbox,
 input[type=radio]:focus ~ .custom-radio {
   outline: 2px solid Highlight;
-  outline: 2px solid -webkit-focus-ring-color;
 }
 
 /********************************************/
@@ -317,6 +313,7 @@ input[type=radio]:focus ~ .custom-radio {
 
 .leetrule {
   padding-left: 0.4rem;
+  padding-top: 0.6rem;
 }
 
 .leetrule > label > * {
@@ -451,7 +448,7 @@ footer {
 }
 
 #attribution {
-  font-size: 11px;
+  font-size: 1em;
   text-align: center;
   margin: 1em auto;
 }
