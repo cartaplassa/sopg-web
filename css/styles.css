@@ -225,7 +225,7 @@ p {
 }
 
 .case-group {
-  flex-basis: 40%;
+  flex-basis: 42.25%;
   margin-right: 2rem;
 }
 
@@ -259,9 +259,16 @@ input[type=checkbox], input[type=radio] {
 
 .custom-checkbox::after, .custom-radio::after {
   display: none;
-  content: url('../assets/images/icon-check.svg');
   height: 100%;
   width: 100%;
+}
+
+.custom-checkbox::after {
+  content: url('../assets/images/icon-check.svg');
+}
+
+.custom-radio::after {
+  content: url('../assets/images/icon-circle.svg');
 }
 
 .custom-checkbox:hover, .custom-radio:hover {
@@ -439,7 +446,7 @@ footer {
 }
 
 #attribution {
-  font-size: 1em;
+  font-size: 1.2em;
   text-align: center;
   margin: 1em auto;
 }
