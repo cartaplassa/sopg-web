@@ -1,7 +1,3 @@
-:root {
-  /*--trickyScale: 1;*/
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -60,6 +56,7 @@ p {
 /********************************************/
 /*PASSWORD FIELD*/
 /********************************************/
+
 .password-field {
   height: 14rem;
   padding: 0 3.2rem;
@@ -76,12 +73,6 @@ p {
   vertical-align: middle;
   display: table-cell;
   word-break: break-all;
-}
-
-.password-placeholder {
-  font-size: 3.2rem;
-  color: hsl(252, 11%, 91%);
-  opacity: 0.25;
 }
 
 .copy-wrapper {

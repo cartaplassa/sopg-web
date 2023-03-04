@@ -41,6 +41,10 @@
 }
 
 @media (max-width: 36em) {
+  html {
+    font-size: 0.75vh;
+  }
+
   .container {
     width: 91.6%;
   }

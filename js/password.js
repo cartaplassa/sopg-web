@@ -1,10 +1,7 @@
 import { passwordEntropy } from './entropy.js'
 import { wordlist } from './wordlist.js'
-
-export const
-  passwordDisplay = document.querySelector('.password-display'),
-  passwordButtonCopy = document.querySelector('.copy-btn'),
-  passwordCopiedNotification = document.querySelector('.copied-text')
+import { styleMeter } from './strength.js'
+import { passwordDisplay } from './clipboard.js'
 
 const
   charPool = document.querySelector('.char-pool'),
@@ -21,12 +18,7 @@ export const
   caseRadios = document.querySelectorAll('input[name=case]'),
   wordlistsBoxes = document.querySelectorAll('input[class=wordlists]')
 
-const
-  entropyText = document.querySelector('.entropy-text'),
-  strengthDescription = document.querySelector('.strength-rating-text'),
-  strengthRatingBars = document.querySelectorAll('.bar')
-
-let canCopy = false
+const entropyText = document.querySelector('.entropy-text')
 
 //------------------------------------------------------//
 //----------------------LEETIFIER-----------------------//
@@ -41,52 +33,6 @@ function leetify(str, obj) {
     newStr = newStr.replaceAll(key, obj[key])
   }
   return newStr
-}
-
-//------------------------------------------------------//
-//--------------------STRENGTH METER--------------------//
-//------------------------------------------------------//
-
-// Remove colors applied to the strength meter
-const resetBarStyles = () => {
-  strengthRatingBars.forEach(bar => {
-    bar.style.backgroundColor = 'transparent'
-    bar.style.borderColor = 'hsl(252, 11%, 91%)'
-  })
-}
-
-// Fill in specified meter bars with the provided color
-const styleBars = ([...barElements], color) => {
-  barElements.forEach(bar => {
-    bar.style.backgroundColor = color
-    bar.style.borderColor = color
-  })
-}
-
-
-// Display text description of password strength and
-// fill in the appropriate meter bars
-const styleMeter = (rating) => {
-  const text = rating[0]
-  const numBars = rating[1]
-  const barsToFill = Array.from(strengthRatingBars).slice(0, numBars)
-
-  resetBarStyles()
-
-  strengthDescription.textContent = text
-
-  switch (numBars) {
-    case 1:
-      return styleBars(barsToFill, 'hsl(0, 91%, 63%)')
-    case 2:
-      return styleBars(barsToFill, 'hsl(13, 95%, 66%)')
-    case 3:
-      return styleBars(barsToFill, 'hsl(42, 91%, 68%)')
-    case 4:
-      return styleBars(barsToFill, 'hsl(127, 100%, 82%')
-    default:
-      throw new Error('Invalid value for numBars')
-  }
 }
 
 //-----------------------------------------------------------//
@@ -116,7 +62,10 @@ const calcStrength = (password) => {
 }
 
 export const generatePassword = (e) => {
-  e.preventDefault()
+  if (e) {
+    e.preventDefault()
+  }
+  
   try {
     validateInput()
 
@@ -187,7 +136,6 @@ export const generatePassword = (e) => {
     styleMeter(strength)
 
     passwordDisplay.textContent = passwordResult
-    canCopy = true
   } catch (err) {
     console.log(err)
   }
@@ -201,28 +149,3 @@ const validateInput = () => {
   }
 }
 
-//-----------------------------------------------------//
-//--------------------COPY PASSWORD--------------------//
-//-----------------------------------------------------//
-
-export const copyPassword = async () => {
-  if (!passwordDisplay.textContent || passwordCopiedNotification.textContent || !canCopy) {
-    return
-  }
-
-  await navigator.clipboard.writeText(passwordDisplay.textContent)
-  passwordCopiedNotification.textContent = 'Copied'
-
-  // Fade out text after 1 second
-  setTimeout(() => {
-    passwordCopiedNotification.style.transition = 'all 1s'
-    passwordCopiedNotification.style.opacity = String(0)
-
-    // Remove styles and text after fade out
-    setTimeout(() => {
-      passwordCopiedNotification.style.removeProperty('opacity')
-      passwordCopiedNotification.style.removeProperty('transition')
-      passwordCopiedNotification.textContent = ''
-    }, 1000)
-  }, 1000)
-}
